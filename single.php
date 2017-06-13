@@ -91,41 +91,111 @@
 					</div>
 					<h4 class="vid-name text-center"><?php echo $title; ?></h4>
 					<p style="margin-top: 20px"><?php echo $contents; ?></p>
-					<!--<div class="vid-tags">
-						<a href="#">Animal</a>
-						<a href="#">Aenean</a>
-						<a href="#">Feugiat</a>
-						<a href="#">Risus</a>
-						<a href="#">Magna</a>
-					</div>-->
 					<div class="line"></div>
-					<div class="comment">
-						<h3>Leave A Comment</h3>
+					<?php
+                 	$sid=$_REQUEST['art'];
+					echo '<h6 id="here" class="text-center">Ibyavuzwe kuri iyi nkuru</h6>';
+					$pipsql = mysqli_query($dbcon,"SELECT * FROM comments WHERE Article='$sid'");
+                    while($row=mysqli_fetch_array($pipsql)){
+							echo'
+							<blockquote>
+								<p>'.ucfirst($row['User']).'</p>
+								<small style="color:black">'.ucfirst($row['Content']).'</small>
+							</blockquote>
+							';
+					}
+					?>
+					<div class="line"></div>
+					<?php
+						if(isset($_REQUEST['yes'])){
+							echo '<h5 class="text-center text-success">Igitekerezo cyawe cyakiriwe. Murakoze!</h5>';
+						}elseif(isset($_REQUEST['no'])){
+							echo '<h5 class="text-center text-danger">Igitekerezo cyawe ntago cyakiriwe, ongera ugerageze!</h5>';
+							echo'
+						<div class="comment">
+						<h3 class="text-center">Gira icyo ubivugaho</h3>
 						<form name="form1" method="post" action="opera/addsomething.php">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+									<input type="text" class="form-control input-lg" name="name" id="name" placeholder="Andika Izina hano" required="required" />
+									</div>
+								</div>
+							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-									<input type="text" class="form-control input-lg" name="name" id="name" placeholder="Enter name" required="required" />
+									<input type="tel" class="form-control input-lg" name="phone" id="phone" placeholder="Andika Numero yawe hano" required="required" />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="email" class="form-control input-lg" name="email" id="email" placeholder="Enter email" required="required" />
+										<input type="email" class="form-control input-lg" name="email" id="email" placeholder="Andika Email yawe hano" />
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
-										<textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
-										placeholder="Message"></textarea>
+										<textarea name="message" id="message" class="form-control input-lg" rows="4" cols="25" required="required"
+										placeholder="Andika ubutumwa bwawe hano"></textarea>
 									</div>						
 									<button type="submit" class="btn btn-success btn-block" name="btnBooking" id="btnBbooking">
 								Send</button>
 								</div>
+								<div style="visibility:hidden;" class="col-md-12">
+									<div class="form-group">
+									<input type="text" name="article" id="name" value="'.$sid.'" />
+									</div>
+								</div>
 							</div>
 						</form>
 					</div>
+							';
+						}else{
+							echo'
+						<div class="comment">
+						<h3 class="text-center">Gira icyo ubivugaho</h3>
+						<form name="form1" method="post" action="opera/addsomething.php">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+									<input type="text" class="form-control input-lg" name="name" id="name" placeholder="Andika Izina hano" required="required" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+									<input type="tel" class="form-control input-lg" name="phone" id="phone" placeholder="Andika Numero yawe hano" required="required" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="email" class="form-control input-lg" name="email" id="email" placeholder="Andika Email yawe hano" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<textarea name="message" id="message" class="form-control input-lg" rows="4" cols="25" required="required"
+										placeholder="Andika ubutumwa bwawe hano"></textarea>
+									</div>						
+									<button type="submit" class="btn btn-success btn-block" name="btnBooking" id="btnBbooking">
+								Send</button>
+								</div>
+								<div style="visibility:hidden;" class="col-md-12">
+									<div class="form-group">
+									<input type="text" name="article" id="name" value="'.$sid.'" />
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+							';
+						}
+					?>
 				</div>
 				
 				<div class="box">
@@ -146,7 +216,7 @@
 											<a href="single.php?art='.$row['ID'].'">
 												<i class="fa fa-file-text-o fa-5x" style="color: lightskyblue"></i>
 											</a>
-											<p>'.ucfirst($row['Title']).'</p>
+											<p style="text-align:left">'.truncateee(ucfirst($row['Title'])).'</p>
 										</div>
 										<div align="center"><img style="position:relative;height:150px" src="'.$row['picture1'].'" /></div>
 									</div>

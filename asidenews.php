@@ -18,7 +18,7 @@
 									<center><img style="position:relative;height:100px" src="'.$row['picture1'].'" /></center>
 								</div>
 								<div class="wrapper">
-									<h3 class="vid-name"><a href="#">'.truncatee(ucfirst($row['Title'])).'</a></h3>
+									<h3 class="vid-name"><a href="single.php?art='.$row['ID'].'">'.truncatee(ucfirst($row['Title'])).'</a></h3>
 									<div class="info">
 										<h5>By <a href="single.php?art='.$row['ID'].'">'.ucfirst($row['Author']).'</a></h5>
 										<span><i class="fa fa-calendar"></i>'.$row['Date'].'</span> 

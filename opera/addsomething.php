@@ -8,6 +8,11 @@ include("dataopera.php");
         $place = htmlentities($_POST['place']);
         $author=htmlentities($_POST['author']);
         $content = $_POST['content'];
+        $pic1txt= htmlentities($_POST['piconetxt']);
+        $pic2txt= htmlentities($_POST['pictwotxt']);
+        $pic3txt= htmlentities($_POST['picthreetxt']);
+        $pic4txt= htmlentities($_POST['picfourtxt']);
+        $pic5txt= htmlentities($_POST['picfivetxt']);
 		$targetFolder = "../images/news/";
 		$targetFolders = "images/news/";
         $picone= $targetFolder.basename($_FILES['picone']['name']);
@@ -33,27 +38,36 @@ include("dataopera.php");
 		$table = "news";
         $destinationArray = "Title,
                                 picture1,
+                                pic1_txt,
                                 picture2,
+                                pic2_txt,
                                 picture3,
+                                pic3_txt,
                                 picture4,
+                                pic4_txt,
                                 picture5,
+                                pic5_txt,
                                 Author,
                                 Content,
                                 Categorie,
-                                Place,Views,
+                                Place,Views,counter,
                                 Date
                                 ";
 
         $sourceArray = stringCopact3($title,
                                         $piconein,
-                                        $pictwoin).",".
-                        stringCopact3($picthreein,
+                                        $pic1txt).",".
+                        stringCopact3($pictwoin,
+                                        $pic2txt,
+                                        $picthreein).",".
+                        stringCopact3($pic3txt,
                                         $picfourin,
-                                        $picfivein).",".
+                                        $pic4txt).",".
+                        stringCopact2($picfivein,$pic5txt).",".
                         stringCopact3($author,
                                         $content,
                                         $cat).",".
-                       stringCopact2($place,0);
+                       stringCopact3($place,0,1);
             $query = insertDatas($table,$destinationArray,$sourceArray);
         $res = mysqli_query($dbcon,$query);
 		if($res){
@@ -62,4 +76,41 @@ include("dataopera.php");
 			echo "<meta http-equiv='refresh' content='0;url=../admin/post.php?no=0'>";
 		}
 	}
+    //Edit
+    if(isset($_POST['pooo'])){
+        $title = htmlentities($_POST['title']);
+		$cat= htmlentities($_POST['sport']);
+        $place = htmlentities($_POST['place']);
+        $author=htmlentities($_POST['author']);
+        $content = $_POST['content'];
+		$table = "news";
+        $target = htmlentities($_POST['target']);
+        $target_col = "ID";
+        $data_to_inserts="Title='$title' , Categorie='$cat', Place='$place', Author='$author', Content='$content', Date = now()";
+        $query = updateDatas($table,$data_to_inserts,$target_col,$target);
+        $res = mysqli_query($dbcon,$query);
+		if($res){
+			echo "<meta http-equiv='refresh' content='0;url=../admin/edit.php?id=".$target."&&yes=0#here'>";
+		}else{
+			echo "<meta http-equiv='refresh' content='0;url=../admin/edit.php?id=".$target."&&yes=0#here'>";
+		}
+	}
+    //Comments
+    if(isset($_POST['btnBooking'])){
+        $name = htmlentities($_POST['name']);
+        $article = htmlentities($_POST['article']);
+        $phone = htmlentities($_POST['phone']);
+        $email = htmlentities($_POST['email']);
+        $message = htmlentities($_POST['message']);
+        $table = "comments";
+        $destinationArray = "User,Content,Article,Phone,Email,counter,Date";
+        $sourceArray = stringCopact3($name,$message,$article).",".stringCopact3($phone,$email,1);
+        $query = insertDatas($table,$destinationArray,$sourceArray);
+        $res = mysqli_query($dbcon,$query);
+        if($res){
+			echo "<meta http-equiv='refresh' content='0;url=../single.php?art=".$article."&&yes=1&&hafahfhgsfhgsdfhgs#here'>";
+		}else{
+			echo "<meta http-equiv='refresh' content='0;url=../single.php?art=".$article."&&no=1&&hafahfhgsfhgsdfhgs#here'>";
+		}
+    }
 	?>

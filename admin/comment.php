@@ -57,8 +57,41 @@
         </section>
 
         <!-- Main content -->
+        <!-- Main content -->
         <section class="content">
-          <div class="row">
+          <div class="box box-primary">
+          <div class="box-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th class="text-center">Main Title</th>
+                  <th class="text-center">Main Picture</th>
+                  <th class="text-center">Number of Comments </th>
+                  <th class="text-center">Number of Views</th>
+                  <th class="text-center">Control </th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php
+                include("../connect.php");
+                $sqli="SELECT * FROM news INNER JOIN comments ON news.ID = comments.Article";
+                $result=mysqli_query($dbcon,$sqli);
+                while ($row=mysqli_fetch_assoc($result)) {
+                  echo'
+                    <tr class="odd gradeX">
+                      <td class="text-center">'.ucfirst($row["Title"]).'</td>
+                      <td class="text-center"><img style="position:relative;height:100px" src="../'.$row["picture1"].'"</td>
+                      <td style="position:relative" class="text-center">'.$row["counter"].'</td>
+                      <td class="text-center">'.ucfirst($row["Views"]).'</td>
+                      <td class="text-center">
+                        <p><a href="more.php?id='.$row['Article'].'" class="btn bg-olive">More</a></p>
+                      </td>
+                    </tr>';
+                    }
+              ?>
+              </tbody>
+            </table>
+          </div>
           </div>
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->

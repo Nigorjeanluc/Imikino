@@ -64,7 +64,7 @@
         <section class="content-header">
           <h1>
             Dashboard
-            <small>Post new articles</small>
+            <small>Edit this article</small>
           </h1>
         </section>
 
@@ -80,14 +80,20 @@
                                 echo'
                                     <div class="alert alert-success alert-dismissable text-center">
                                         <button style="font-size:20px" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                        <h5 style="font-size:20px">Post added <a href="#" class="alert-link">More Details</a>.</h5>
+                                        <h5 style="font-size:20px">Post Edited <a href="#" class="alert-link">More Details</a>.</h5>
                                     </div>';
                                     }
                         ?>
+                        <?php
+                            $sid = $_REQUEST['id'];
+                            $sql = mysqli_query($dbcon,"SELECT * FROM news WHERE ID='$sid'");
+                            while($row = mysqli_fetch_array($sql)){
+                                echo'
                         <form role="form" method="post" action="../opera/addsomething.php" enctype="multipart/form-data">
                             <div class="form-group text-center">
                                 <label>Title</label>
-                                <input class="form-control" type="text" name="title" placeholder="Title" required>
+                                <input class="form-control" type="text" name="title" value="'.$row['Title'].'" required>
+                                <input style="visibility:hidden" type="text" name="target" value="'.$row['ID'].'" required>
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
@@ -125,10 +131,10 @@
                             </div>
                             <div class="form-group text-center">
                                 <label>Author</label>
-                                <input class="form-control" type="text" name="author" placeholder="Author" required>
+                                <input class="form-control" type="text" name="author" value="'.$row['Author'].'" required>
                             </div>
                             <div class="row">
-                                <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
+                                <!--<div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
                                     <label>Select pictures of your article ordered like this respectively...</label>
                                     <input name="picone" class="form-control" type="file" required>
                                     <input name="pictwo" class="form-control files" type="file">
@@ -143,9 +149,9 @@
                                     <input name="picthreetxt" class="form-control" placeholder="Picture Three" type="text">
                                     <input name="picfourtxt" class="form-control" placeholder="Picture Four" type="text">
                                     <input name="picfivetxt" class="form-control" placeholder="Picture Five" type="text">
-                                </div>
-                                <div class="form-group col-lg-6 col-md-6 text-center">
-                                    <label>Edit your post here</label>
+                                </div>-->
+                                <div class="form-group col-lg-12 col-md-12 text-center">
+                                    <label>Re-Edit your post here</label>
                                     <textarea class="form-control" id="txtEditor"></textarea>
                                 </div>
                             </div>
@@ -156,8 +162,11 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="box-footer text-center"><p><input type="submit" name="poo" class="btn btn-success" value="Post the article"> | <input class="btn btn-default" type="reset" value="Reset"></p></div>
+                    <div class="box-footer text-center"><p><input type="submit" name="pooo" class="btn btn-success" value="Post the article"> | <input class="btn btn-default" type="reset" value="Reset"></p></div>
                         </form>
+                                ';
+                            }
+                        ?>
                 </div>
             </div>
           </div>

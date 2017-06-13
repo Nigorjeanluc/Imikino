@@ -1,3 +1,4 @@
+        <?php $name=$_SESSION['admin']; ?>
         <header class="main-header">
         <a href="index.php" class="logo"><b>Admin</b><span style="font-family:cursive;font-style:italic;text-shadow: 5px 4px 4px #0e540d;">
 					<span style="color:lightskyblue">Imi</span><span style="color:gold">kino</span><span style="color:seagreen">.com</span>
@@ -96,7 +97,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="login.php?no=1" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>

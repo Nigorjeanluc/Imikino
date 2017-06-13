@@ -23,16 +23,15 @@ function insertDatasNoDate( $table,$destination_array,$source_array)
 
 
 }
-function deleteDatas( $table,$table_row,$target)
+function deleteDatas( $table,$table_col,$target)
 {  
    // $tables = array("posters","posts","users")
-    $sql= "DELETE FROM ".$table." WHERE `".$table_row."` = ".$target;
+    $sql= "DELETE FROM ".$table." WHERE `".$table_col."` = ".$target;
     return $sql;
 }
-function updateDatas( $table,$target_array,$table_row,$source_array,$target)
+function updateDatas( $table,$data_to_inserts,$table_col,$target)
 { 
- $data_to_inserts = ""; //Picture01='$picone' , Phone='$phone', Email='$email', Password='$password', Date=now()
- $sql= "UPDATE ".$table." SET " .$data_to_inserts."  WHERE ".$table_row." = '".$target."'";
+ $sql= "UPDATE ".$table." SET " .$data_to_inserts."  WHERE ".$table_col." = '".$target."'";
  return $sql;
 }
 

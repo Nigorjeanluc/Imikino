@@ -1,7 +1,7 @@
 {
-  "name": "almasaeed2010/adminlte",
+  "name": "nigorjeanluc/adminlte",
   "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
-  "homepage": "http://almsaeedstudio.com/",
+  "homepage": "http://imikino.com/",
   "keywords": [
     "css",
     "js",
@@ -15,12 +15,12 @@
   ],
   "authors": [
     {
-      "name": "Abdullah Almsaeed",
-      "email": "support@almsaeedstudio.com"
+      "name": "Ndiramiye Igor Jean-Luc",
+      "email": "nigorjeanluc@gmail.com"
     }
   ],
   "license": "MIT",
   "support": {
-    "issues": "https://github.com/almasaeed2010/AdminLTE/issues"
+    "issues": "https://github.com/"
   }
 }

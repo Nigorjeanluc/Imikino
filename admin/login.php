@@ -1,8 +1,5 @@
 <?php
     session_start();
-    if(isset($_SESSION['admin'])){
-        echo "<meta http-equiv='refresh' content='0;url=index.php'>";
-    }
 ?>
 <html>
   <head>
@@ -41,8 +38,6 @@
             <p>Wrong username or password, retry again or return <a href="../index.php">Home</a>.</p>
           </div>
            ';
-          }else{
-            echo'<p class="login-box-msg">Sign in to start your session</p>';
           }
           $no=isset($_REQUEST['no']);
           if($no){
@@ -106,3 +101,8 @@
     </script>
   </body>
 </html>
+<?php
+  if(isset($_SESSION['admin'])){
+        echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+  }
+?>
