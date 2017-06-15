@@ -30,7 +30,7 @@
                 $sqli="SELECT SUM(counter) FROM news";
                 $result=mysqli_query($dbcon,$sqli);
                 while ($row=mysqli_fetch_assoc($result)) {
-                  echo $row['SUM(counter)'];
+                  echo $row['SUM(counter)']." post";
                 }
               ?>
               </span></a>
@@ -51,7 +51,7 @@
                 $sqli="SELECT SUM(counter) FROM comments";
                 $result=mysqli_query($dbcon,$sqli);
                 while ($row=mysqli_fetch_assoc($result)) {
-                  echo $row['SUM(counter)'];
+                  echo $row['SUM(counter)']." new";
                 }
               ?>
               </span>

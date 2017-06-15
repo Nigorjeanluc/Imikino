@@ -81,16 +81,29 @@
                   echo'
                     <tr class="odd gradeX">
                       <td class="text-center">'.ucfirst($row["Title"]).'</td>
-                      <td class="text-center"><img style="position:relative;height:100px" src="../'.$row["picture1"].'"</td>
+                      <td class="text-center"><img class="img-rounded" style="position:relative;height:100px" src="../'.$row["picture1"].'"/></td>
                       <td style="position:relative" class="text-center">'.truncate($row["Content"]).'</td>
                       <td class="text-center">'.ucfirst($row["Place"]).'</td>
                       <td class="text-center">'.ucfirst($row["Categorie"]).'</td>
                       <td class="text-center">'.$row["Date"].'</td>
                       <td class="text-center">
                         <p><a href="edit.php?id='.$row['ID'].'" class="btn bg-olive">Edit</a></p>
-                        <p><a href="../opera/delproduct.php?del='.$row['ID'].'" class="btn bg-orange">Delete</a></p>
+                        <p><button class="btn btn-primary" data-toggle="modal" data-target="#myModal'.$row['ID'].'">Delete</button></p>
                       </td>
                     </tr>';
+                    echo'
+                    <div class="modal fade" id="myModal'.$row['ID'].'" tabindex="-1" role="dialog" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm">
+                        <div style="background-color:white" class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        </div>
+                        <div class="modal-content">
+                          <div class="col-md-4"><img style="position:relative;height:100px" src="../'.$row["picture1"].'"/></div>
+                          <div class="col-md-8"><a href="../opera/delproduct.php?del='.$row['ID'].'" class="btn btn-success">Delete</a> | <button type="button" class="close btn bg-orange" data-dismiss="modal">Cancel</button></div>
+                        </div>
+                      </div>
+                    </div>';
                     }
               ?>
               </tbody>
@@ -99,6 +112,7 @@
           </div>
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
+      
 
       <?php require('footer.php'); ?>
     </div><!-- ./wrapper -->
