@@ -125,9 +125,14 @@
 			</div>
 			<div class="col-sm-4" >
 				<div id="owl-demo-1" class="owl-carousel">
-					<img src="images/slide-2.jpg" />
-					<img src="images/slide-1.jpg" />
-					<img src="images/slide-3.jpg" />
+				<?php
+					$sql = mysqli_query($dbcon,"SELECT * FROM adverts ORDER BY ID DESC LIMIT 0,3");
+					while($row = mysqli_fetch_array($sql)){
+						echo'
+					<img style="height:240px" src="'.$row['picture1'].'" />
+						';
+					}
+				?>
 				</div>
 				<img src="images/banner.jpg" />
 			</div>
@@ -331,15 +336,9 @@
 					</div>-->
 				</div>
 				<div class="col-md-3">
-					<!-- Start Widget -->
-					<div class="widget wid-tags">
-						<div class="heading"><h4>Shakira aha</h4></div>
-						<div class="content">
-							<form role="form" class="form-horizontal" method="post" action="">
-								<input type="text" placeholder="Enter Search Keywords" value="" name="v_search" id="v_search" class="form-control">
-							</form>
-						</div>
-					</div>
+					<?php
+						include('search.php');
+					?>
 					<!-- Start Widget -->
 					<!--<div class="widget wid-tags">
 						<div class="heading"><h4>Tags</h4></div>

@@ -52,79 +52,44 @@
         <section class="content-header">
           <h1>
             Dashboard
-            <small>Control</small>
+            <small>Comments made</small>
           </h1>
         </section>
 
         <!-- Main content -->
+        <!-- Main content -->
         <section class="content">
-          <div class="box box-primary">
-          <div class="box-body">
-            <?php
-              $yes=isset($_REQUEST['yess']);
-                if($yes){
-                  echo'
+            <div class="box box-primary">
+                <div class="box-body">
+                <?php
+                    $yes=isset($_REQUEST['yes']);
+                    if($yes){
+                    echo'
                     <div class="alert alert-success alert-dismissable text-center">
                       <button style="font-size:20px" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                      <h5 style="font-size:20px">Post deleted.</h5>
-                    </div>';
-                }
-            ?>
-            <table id="example1" class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th class="text-center">Main Title</th>
-                  <th class="text-center">Main Picture</th>
-                  <th class="text-center">Content </th>
-                  <th class="text-center">Place</th>
-                  <th class="text-center">Type of Sport </th>
-                  <th class="text-center">Date </th>
-                  <th class="text-center">Control </th>
-                </tr>
-              </thead>
-              <tbody>
-              <?php
-                include("../connect.php");
-                $sqli="SELECT * FROM news ORDER BY ID DESC";
-                $result=mysqli_query($dbcon,$sqli);
-                while ($row=mysqli_fetch_assoc($result)) {
-                  echo'
-                    <tr class="odd gradeX">
-                      <td class="text-center">'.ucfirst($row["Title"]).'</td>
-                      <td class="text-center"><img class="img-rounded" style="position:relative;height:100px" src="../'.$row["picture1"].'"/></td>
-                      <td style="position:relative" class="text-center">'.truncate($row["Content"]).'</td>
-                      <td class="text-center">'.ucfirst($row["Place"]).'</td>
-                      <td class="text-center">'.ucfirst($row["Categorie"]).'</td>
-                      <td class="text-center">'.$row["Date"].'</td>
-                      <td class="text-center">
-                        <p><a href="edit.php?id='.$row['ID'].'" class="btn bg-olive">Edit</a></p>
-                        <p><button class="btn btn-primary" data-toggle="modal" data-target="#myModal'.$row['ID'].'">Delete</button></p>
-                      </td>
-                    </tr>';
-                    echo'
-                    <div class="modal fade" id="myModal'.$row['ID'].'" tabindex="-1" role="dialog" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-sm">
-                        <div style="background-color:white" class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                          <h4 class="modal-title" id="myModalLabel">'.ucfirst($row['Title']).'</h4>
-                        </div>
-                        <div class="modal-content">
-                        <div style="padding:5px" class="row text-center">
-                          <div class="col-md-12"><img class="img-rounded" style="position:relative;height:100px;" src="../'.$row["picture1"].'"/></div>
-                          <div class="col-md-12"><p>Do you really want to delete this?</p><p><a href="../opera/delproduct.php?del='.$row['ID'].'" class="btn btn-success">Delete</a> | <button type="button" class="btn bg-orange" data-dismiss="modal">Cancel</button></p></div>
-                        </div>
-                        </div>
-                      </div>
+                      <h5 style="font-size:20px">Advert added.</h5>
                     </div>';
                     }
-              ?>
-              </tbody>
-            </table>
-          </div>
-          </div>
+                ?>
+                <form role="form" method="post" action="../opera/addsomething.php" enctype="multipart/form-data">
+                            <div class="form-group text-center">
+                                <label>Company</label>
+                                <input class="form-control" type="text" name="name" placeholder="Enter the company name" required>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
+                                    <label>Select a picture...</label>
+                                    <input name="picone" class="form-control" type="file" required>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="box-footer text-center"><p><input type="submit" name="po" class="btn btn-success" value="Advertise"> | <input class="btn btn-default" type="reset" value="Reset"></p></div>
+                        </form>
+                        
+                </div>
+            </div>
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
-      
 
       <?php require('footer.php'); ?>
     </div><!-- ./wrapper -->

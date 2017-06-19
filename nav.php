@@ -56,6 +56,7 @@
 				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 				<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+				<li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
 				<li><a href="admin/login.php" target="_blank"><i class="fa fa-user"></i></a></li>
 			</ul>
 		</div>

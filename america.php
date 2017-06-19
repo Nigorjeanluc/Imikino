@@ -136,8 +136,8 @@
 								</li>
 								<li>
 									<a href="facebook.com/">
-										<div class="box-google">
-											<span class="fa fa-google-plus fa-2x icon"></span>
+										<div style="background-color:green" class="box-google">
+											<span class="fa fa-whatsapp fa-2x icon"></span>
 											<span>1250</span>
 											<span>Fans</span>
 										</div>
@@ -210,6 +210,9 @@
 		maxView: 1,
 		forceParse: 0
     });
+	/*$('.here').onmouseover(function(){
+		$('.here').css("");
+	});*/
 </script>
 </body>
 </html>

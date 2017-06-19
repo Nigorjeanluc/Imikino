@@ -99,7 +99,7 @@
                                 <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
                                     <label>Type of sport</label>
                                     <select class="form-control" name="sport" required>
-                                        <option value="">- Select the sport -</option>
+                                        <option value="'.$row['Categorie'].'">'.ucfirst($row['Categorie']).'</option>
                                         <option value="basketball">Basketball</option>
                                         <option value="football">Football</option>
                                         <option value="volleyball">Volleyball</option>
@@ -115,7 +115,7 @@
                                 <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
                                     <label>Place</label>
                                     <select class="form-control" name="place" required>
-                                        <option value="">- Select the place -</option>
+                                        <option value="'.$row['Place'].'">'.ucfirst($row['Place']).'</option>
                                         <option value="Rwanda">Rwanda</option>
                                         <option value="Africa">Africa</option>
                                         <option value="Asia">Asia</option>

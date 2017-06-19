@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Igor Jean-Luc Ndiramiye">
 	
-    <title>Cricket | Imikino.com</title>
+    <title>Africa | Imikino.com</title>
 	
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
@@ -61,32 +61,39 @@
 			<div class="row">
 				<div id="main-content" class="col-md-8">
 					<?php
-						$sql = mysqli_query($dbcon,"SELECT * FROM news WHERE Categorie = 'Cricket' ORDER BY ID DESC LIMIT 0,10");
-						while($row = mysqli_fetch_array($sql)){
-							echo'
-					<div class="box">
-						<a href="single.php?art='.$row['ID'].'"><h4 style="font-size:20px" class="vid-name">'.ucfirst($row['Title']).'</h4></a>
-						<div class="info">
-							<h5>By <a href="#">'.ucfirst($row['Author']).'</a></h5>
-							<span><i class="fa fa-calendar"></i> June 12, 2015</span> 
-							<span><i class="fa fa-comment"></i> 0 Comments</span>
-							<span><i class="fa fa-eye"></i>'.$row['Views'].' Views</span>
-						</div>
-						<div class="wrap-vid">
-							<div class="zoom-container">
-								<div class="zoom-caption">
-									<span class="vimeo">'.ucfirst($row['Place']).'</span>
-									<a href="single.php?art='.$row['ID'].'">
-										<i class="fa fa-file-text-o fa-5x" style="color: lightskyblue"></i>
-									</a>
-									<p>'.$row['Title'].'</p>
+						if(isset($_GET['search'])){
+							$sql_query = "SELECT * FROM news WHERE (Content OR Title) LIKE '%".$_GET['search']."%'";
+							$result = mysqli_query($dbcon,$sql_query);
+							if(mysqli_num_rows($result) > 0){
+								while($row = mysqli_fetch_array($sql)){
+									echo'
+							<div class="box">
+								<a href="single.php?art='.$row['ID'].'"><h4 style="font-size:20px" class="vid-name">'.ucfirst($row['Title']).'</h4></a>
+								<div class="info">
+									<h5>By <a href="#">'.ucfirst($row['Author']).'</a></h5>
+									<span><i class="fa fa-calendar"></i> June 12, 2015</span> 
+									<span><i class="fa fa-comment"></i> 0 Comments</span>
+									<span><i class="fa fa-eye"></i>'.$row['Views'].' Views</span>
 								</div>
-								<div align="center"><img style="position:relative;height:150px" src="'.$row['picture1'].'" /></div>
+								<div class="wrap-vid">
+									<div class="zoom-container">
+										<div class="zoom-caption">
+											<span class="vimeo">'.ucfirst($row['Categorie']).'</span>
+											<a href="single.php?art='.$row['ID'].'">
+												<i class="fa fa-file-text-o fa-5x" style="color: lightskyblue"></i>
+											</a>
+											<p>'.$row['Title'].'</p>
+										</div>
+										<div align="center"><img style="position:relative;height:150px" src="'.$row['picture1'].'" /></div>
+									</div>
+									<p>'.truncate($row['Content']).' <a href="single.php?art='.$row['ID'].'">MORE...</a></p>
+								</div>
 							</div>
-							<p>'.truncate($row['Content']).' <a href="single.php?art='.$row['ID'].'">MORE...</a></p>
-						</div>
-					</div>
-					<hr class="line">';
+							<hr class="line">';
+								}
+							}else{
+								echo '<div class="box"><h4 class="text-center">Inkuru ushaka ntishoboye kuboneka.</h4></div>';
+							}
 						}
 					?>
 					<div class="box">
@@ -112,7 +119,20 @@
 					</div>
 				</div>
 				<div id="sidebar" class="col-md-4">
-					<!---- Start Widget ---->
+                    <!-- Start Widget -->
+					<div class="widget wid-tags">
+						<div class="heading"><h4>Shakira aha</h4></div>
+						<div class="content">
+							<form role="form" class="form-horizontal" method="post" action="opera/search.php">
+								<div class="input-group">
+									<input type="text" placeholder="Shaka ijambo hano" name="search" value="<?php if(isset($_GET["search"])) echo $_GET["search"]; ?>" class="form-control">
+									<span class="input-group-btn">
+										<input class="btn btn-info" name="submit" type="submit" value="Shaka"/>
+									</span>
+								</div>
+							</form>
+						</div>
+					</div>
 					<div class="widget wid-follow">
 						<div class="heading"><h4>Follow Us</h4></div>
 						<div class="content">

@@ -61,6 +61,15 @@
 					$pipsql = mysqli_query($dbcon,"SELECT * FROM news WHERE ID='$sid'");
                     while($row=mysqli_fetch_array($pipsql)){
                         $img= $row['picture1'];
+						$pic1txt= $row['pic1_txt'];
+						$img2= $row['picture2'];
+						$pic2txt= $row['pic2_txt'];
+						$img3= $row['picture3'];
+						$pic3txt= $row['pic3_txt'];
+						$img4= $row['picture4'];
+						$pic4txt= $row['pic4_txt'];
+						$img5= $row['picture5'];
+						$pic5txt= $row['pic5_txt'];
 						$title= $row['Title'];
 						$contents= $row['Content'];
 						$author = $row['Author'];
@@ -74,13 +83,17 @@
                     }
                 ?>
 					<div class="wrap-vid">
-						<?php echo'<div align="center"><img style="position:relative;height:300px" src="'.$img.'" /></div>';?>
+						<?php 
+							echo'<div align="center"><img style="position:relative;height:300px" src="'.$img.'" /></div>';
+							echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic1txt).'</b></p>';
+						?>
 					</div>
 					<div style="margin-top:5px" class="share">
 						<ul class="list-inline center">
 							<li><a href="#" class="btn btn-facebook"><i class="fa fa-facebook"></i> Share</a></li>
 							<li><a href="#" class="btn btn-twitter"><i class="fa fa-twitter"></i> Tweet</a></li>
 							<li><a href="#" class="btn btn-google"><i class="fa fa-google-plus-square"></i> Google+</a></li>
+							<li><a href="#" class="btn btn-success"><i class="fa fa-whatsapp"></i> WhatsApp</a></li>
 						</ul>
 					</div>
 					<div class="line"></div><br />
@@ -89,8 +102,33 @@
 						<span><i class="fa fa-calendar"></i><?php echo $date; ?></span> 
 						<span><i class="fa fa-eye"></i><?php echo $views; ?> Views</span>
 					</div>
-					<h4 class="vid-name text-center"><?php echo $title; ?></h4>
-					<p style="margin-top: 20px"><?php echo $contents; ?></p>
+					<h4 class="vid-name text-center"><?php echo ucfirst($title); ?></h4>
+					<p style="margin-top: 20px">
+					<?php 
+						echo $contents;
+						if(($img2=" ")||($img3=" ")||($img4=" ")||($img5=" ")){
+						}else{
+							echo'<h5 class="text-center">Andi mafoto</h5>';
+							echo $img2;
+							if(isset($img2)){
+								echo'<div align="center"><img style="position:relative;height:300px" src="'.$img2.'" /></div>';
+								echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic2txt).'</b></p>';
+							}
+							if(isset($img3)){
+								echo'<div align="center"><img style="position:relative;height:300px" src="'.$img3.'" /></div>';
+								echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic3txt).'</b></p>';
+							}
+							if(isset($img4)){
+								echo'<div align="center"><img style="position:relative;height:300px" src="'.$img4.'" /></div>';
+								echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic4txt).'</b></p>';
+							}
+							if(isset($img5)){
+								echo'<div align="center"><img style="position:relative;height:300px" src="'.$img5.'" /></div>';
+								echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic5txt).'</b></p>';
+							}
+						}
+					?>
+					</p>
 					<div class="line"></div>
 					<?php
                  	$sid=$_REQUEST['art'];
@@ -141,7 +179,7 @@
 										placeholder="Andika ubutumwa bwawe hano"></textarea>
 									</div>						
 									<button type="submit" class="btn btn-success btn-block" name="btnBooking" id="btnBbooking">
-								Send</button>
+								Ohereza ubutumwa bwawe!</button>
 								</div>
 								<div style="visibility:hidden;" class="col-md-12">
 									<div class="form-group">
@@ -183,7 +221,7 @@
 										placeholder="Andika ubutumwa bwawe hano"></textarea>
 									</div>						
 									<button type="submit" class="btn btn-success btn-block" name="btnBooking" id="btnBbooking">
-								Send</button>
+								Ohereza ubutumwa bwawe!</button>
 								</div>
 								<div style="visibility:hidden;" class="col-md-12">
 									<div class="form-group">
@@ -261,8 +299,8 @@
 								</li>
 								<li>
 									<a href="facebook.com/">
-										<div class="box-google">
-											<span class="fa fa-google-plus fa-2x icon"></span>
+										<div style="background-color:green" class="box-google">
+											<span class="fa fa-whatsapp fa-2x icon"></span>
 											<span>1250</span>
 											<span>Fans</span>
 										</div>

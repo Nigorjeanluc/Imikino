@@ -57,6 +57,28 @@
               </span>
               </a>
             </li>
+            <li>
+              <a href="pub.php">
+                <i class="fa fa-th-large"></i>
+                <span>Post new advertisement</span>
+              </a>
+            </li>
+            <li>
+              <a href="messages.php">
+                <i class="fa fa-list-alt"></i>
+                <span>Messages</span>
+              <span class="label label-success pull-right">
+              <?php
+                include("../connect.php");
+                $sqli="SELECT SUM(counter) FROM messages";
+                $result=mysqli_query($dbcon,$sqli);
+                while ($row=mysqli_fetch_assoc($result)) {
+                  echo $row['SUM(counter)']." new";
+                }
+              ?>
+              </span>
+              </a>
+            </li>
           </ul>
         </section>
         <!-- /.sidebar -->

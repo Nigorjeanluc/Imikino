@@ -76,6 +76,26 @@ include("dataopera.php");
 			echo "<meta http-equiv='refresh' content='0;url=../admin/post.php?no=0'>";
 		}
 	}
+    //Pub
+    if(isset($_POST['po'])){
+        $name = htmlentities($_POST['name']);
+		$targetFolder = "../images/pub/";
+		$targetFolders = "images/pub/";
+        $picone= $targetFolder.basename($_FILES['picone']['name']);
+        $file_tmp1=$_FILES['picone']['tmp_name'];
+		move_uploaded_file($file_tmp1,$picone);
+        $piconein= $targetFolders.basename($_FILES['picone']['name']);
+		$table = "adverts";
+        $destinationArray = "Company,picture1,Date";
+        $sourceArray = stringCopact2($name,$piconein);
+        $query = insertDatas($table,$destinationArray,$sourceArray);
+        $res = mysqli_query($dbcon,$query);
+		if($res){
+			echo "<meta http-equiv='refresh' content='0;url=../admin/pub.php?yes=0#here'>";
+		}else{
+			echo "<meta http-equiv='refresh' content='0;url=../admin/pub.php?no=0'>";
+		}
+	}
     //Edit
     if(isset($_POST['pooo'])){
         $title = htmlentities($_POST['title']);
