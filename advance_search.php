@@ -38,6 +38,12 @@
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
     <![endif]-->
+	<style>
+		.black{
+			background-color: black;
+			color: white;
+		}
+	</style>
 </head>
 
 <body>
@@ -62,10 +68,10 @@
 				<div id="main-content" class="col-md-8">
 					<?php
 						if(isset($_GET['search'])){
-							$sql_query = "SELECT * FROM news WHERE (Content OR Title) LIKE '%".$_GET['search']."%'";
+							$sql_query = "SELECT * FROM news WHERE Title LIKE '%".$_GET['search']."%'";
 							$result = mysqli_query($dbcon,$sql_query);
 							if(mysqli_num_rows($result) > 0){
-								while($row = mysqli_fetch_array($sql)){
+								while($row = mysqli_fetch_array($result)){
 									echo'
 							<div class="box">
 								<a href="single.php?art='.$row['ID'].'"><h4 style="font-size:20px" class="vid-name">'.ucfirst($row['Title']).'</h4></a>
@@ -157,7 +163,7 @@
 								</li>
 								<li>
 									<a href="facebook.com/">
-										<div style="background-color:green" class="box-google">
+										<div id="whats" style="background-color:green" class="box-google">
 											<span class="fa fa-whatsapp fa-2x icon"></span>
 											<span>1250</span>
 											<span>Fans</span>
@@ -182,6 +188,12 @@
 	<script src="owl-carousel/owl.carousel.js"></script>
     <script>
     $(document).ready(function() {
+		$("#whats").mouseenter(function(){
+			$(this).addClass("black");
+			$("#whats").mouseleave(function(){
+				$(this).removeClass("black");
+			});
+		});
       $("#owl-demo-1").owlCarousel({
         autoPlay: 3000,
         items : 1,
