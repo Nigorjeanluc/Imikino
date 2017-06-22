@@ -106,26 +106,21 @@
 					<p style="margin-top: 20px">
 					<?php 
 						echo $contents;
-						if(($img2=" ")||($img3=" ")||($img4=" ")||($img5=" ")){
-						}else{
-							echo'<h5 class="text-center">Andi mafoto</h5>';
-							echo $img2;
-							if(isset($img2)){
-								echo'<div align="center"><img style="position:relative;height:300px" src="'.$img2.'" /></div>';
-								echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic2txt).'</b></p>';
-							}
-							if(isset($img3)){
-								echo'<div align="center"><img style="position:relative;height:300px" src="'.$img3.'" /></div>';
-								echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic3txt).'</b></p>';
-							}
-							if(isset($img4)){
-								echo'<div align="center"><img style="position:relative;height:300px" src="'.$img4.'" /></div>';
-								echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic4txt).'</b></p>';
-							}
-							if(isset($img5)){
-								echo'<div align="center"><img style="position:relative;height:300px" src="'.$img5.'" /></div>';
-								echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic5txt).'</b></p>';
-							}
+						if($img2!=="images/news/"){
+							echo'<div align="center"><img style="position:relative;height:300px" src="'.$img2.'" /></div>';
+							echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic2txt).'</b></p>';
+						}
+						if($img3!=="images/news/"){
+							echo'<div align="center"><img style="position:relative;height:300px" src="'.$img3.'" /></div>';
+							echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic3txt).'</b></p>';
+						}
+						if($img4!=="images/news/"){
+							echo'<div align="center"><img style="position:relative;height:300px" src="'.$img4.'" /></div>';
+							echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic4txt).'</b></p>';
+						}
+						if($img5!=="images/news/"){
+							echo'<div align="center"><img style="position:relative;height:300px" src="'.$img5.'" /></div>';
+							echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic5txt).'</b></p>';
 						}
 					?>
 					</p>
@@ -300,7 +295,7 @@
 								</li>
 								<li>
 									<a href="facebook.com/">
-										<div style="background-color:green" class="box-google">
+										<div id="whats" style="background-color:green" class="box-google">
 											<span class="fa fa-whatsapp fa-2x icon"></span>
 											<span>1250</span>
 											<span>Fans</span>
@@ -324,6 +319,12 @@
 	<script src="owl-carousel/owl.carousel.js"></script>
     <script>
     $(document).ready(function() {
+		$("#whats").mouseenter(function(){
+			$(this).attr("style","background-color:black;color:white");
+			$("#whats").mouseleave(function(){
+				$(this).attr("style","background-color:green;color:white");
+			});
+		});
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
         items : 5,

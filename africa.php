@@ -139,7 +139,7 @@
 								</li>
 								<li>
 									<a href="facebook.com/">
-										<div style="background-color:green" class="box-google">
+										<div id="whats" style="background-color:green" class="box-google">
 											<span class="fa fa-whatsapp fa-2x icon"></span>
 											<span>1250</span>
 											<span>Fans</span>
@@ -164,6 +164,12 @@
 	<script src="owl-carousel/owl.carousel.js"></script>
     <script>
     $(document).ready(function() {
+		$("#whats").mouseenter(function(){
+			$(this).attr("style","background-color:black;color:white");
+			$("#whats").mouseleave(function(){
+				$(this).attr("style","background-color:green;color:white");
+			});
+		});
       $("#owl-demo-1").owlCarousel({
         autoPlay: 3000,
         items : 1,

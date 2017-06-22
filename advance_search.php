@@ -38,12 +38,6 @@
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
     <![endif]-->
-	<style>
-		.black{
-			background-color: black;
-			color: white;
-		}
-	</style>
 </head>
 
 <body>
@@ -63,12 +57,12 @@
 	<!-- /////////////////////////////////////////Content -->
 	<!-- /////////////////////////////////////////Content -->
 	<div id="page-content" class="archive-page container">
-		<div class="">
+		<div>
 			<div class="row">
 				<div id="main-content" class="col-md-8">
 					<?php
 						if(isset($_GET['search'])){
-							$sql_query = "SELECT * FROM news WHERE Title LIKE '%".$_GET['search']."%'";
+							$sql_query = "SELECT * FROM news WHERE Title LIKE '%".$_GET['search']."%' OR Categorie LIKE '%".$_GET['search']."%' OR Place LIKE '%".$_GET['search']."%' OR Author LIKE '%".$_GET['search']."%'";
 							$result = mysqli_query($dbcon,$sql_query);
 							if(mysqli_num_rows($result) > 0){
 								while($row = mysqli_fetch_array($result)){
@@ -88,7 +82,7 @@
 											<a href="single.php?art='.$row['ID'].'">
 												<i class="fa fa-file-text-o fa-5x" style="color: lightskyblue"></i>
 											</a>
-											<p>'.$row['Title'].'</p>
+											<p>'.ucfirst($row['Title']).'</p>
 										</div>
 										<div align="center"><img style="position:relative;height:150px" src="'.$row['picture1'].'" /></div>
 									</div>
@@ -189,9 +183,9 @@
     <script>
     $(document).ready(function() {
 		$("#whats").mouseenter(function(){
-			$(this).addClass("black");
+			$(this).attr("style","background-color:black;color:white");
 			$("#whats").mouseleave(function(){
-				$(this).removeClass("black");
+				$(this).attr("style","background-color:green;color:white");
 			});
 		});
       $("#owl-demo-1").owlCarousel({
