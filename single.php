@@ -93,7 +93,7 @@
 							<li><a href="#" class="btn btn-facebook"><i class="fa fa-facebook"></i> Share</a></li>
 							<li><a href="#" class="btn btn-twitter"><i class="fa fa-twitter"></i> Tweet</a></li>
 							<li><a href="#" class="btn btn-google"><i class="fa fa-google-plus-square"></i> Google+</a></li>
-							<li><a href="#" class="btn btn-success"><i class="fa fa-whatsapp"></i> WhatsApp</a></li>
+							<li><a href="#" id="whatss" class="btn" style="background-color:green;color:white"><i class="fa fa-whatsapp"></i> WhatsApp</a></li>
 						</ul>
 					</div>
 					<div class="line"></div><br />
@@ -127,16 +127,24 @@
 					<div class="line"></div>
 					<?php
                  	$sid=$_REQUEST['art'];
-					echo '<h6 id="here" class="text-center">Ibyavuzwe kuri iyi nkuru</h6>';
 					$pipsql = mysqli_query($dbcon,"SELECT * FROM comments WHERE Article='$sid'");
-                    while($row=mysqli_fetch_array($pipsql)){
+					$pipsqli = mysqli_query($dbcon,"SELECT * FROM comments WHERE Article='$sid'");
+					if(Null!=mysqli_fetch_assoc($pipsql)){
+						echo '<h6 id="here" class="text-center">Ibyavuzwe kuri iyi nkuru</h6>';
+						while($row=mysqli_fetch_array($pipsqli)){
 							echo'
 							<blockquote>
 								<p>'.ucfirst($row['User']).'</p>
 								<small style="color:black">'.ucfirst($row['Content']).'</small>
 							</blockquote>
 							';
+						}
+					}else{
+						echo '<h6 id="here" class="text-center">Ntakiravugwa kuri iyi nkuru</h6><h6 align="center">Ba uwambere mugutanga igikekerezo cyawe kuri <span style="font-family:cursive;font-size:25px;font-style:oblique;text-shadow: 3px 4px 4px black;" class="logo">
+					<span style="color:lightskyblue">IMI</span><span style="color:gold">KINO</span><span style="color:seagreen">.COM</span>
+				</span></h6>';
 					}
+                   
 					?>
 					<div class="line"></div>
 					<?php
@@ -322,6 +330,12 @@
 		$("#whats").mouseenter(function(){
 			$(this).attr("style","background-color:black;color:white");
 			$("#whats").mouseleave(function(){
+				$(this).attr("style","background-color:green;color:white");
+			});
+		});
+		$("#whatss").mouseenter(function(){
+			$(this).attr("style","background-color:black;color:white");
+			$("#whatss").mouseleave(function(){
 				$(this).attr("style","background-color:green;color:white");
 			});
 		});
