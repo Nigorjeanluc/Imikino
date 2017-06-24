@@ -41,6 +41,15 @@
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=632303256956449";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 <header>
 	<!--Top-->
 	<?php include('navtop.php'); ?>
@@ -90,7 +99,9 @@
 					</div>
 					<div style="margin-top:5px" class="share">
 						<ul class="list-inline center">
-							<li><a href="#" class="btn btn-facebook"><i class="fa fa-facebook"></i> Share</a></li>
+							<li class="fb-share-button" data-href="https://imikino.streamupbox.com/single.php" data-layout="button" data-size="small" data-mobile-iframe="true"><a  class="fb-xfbml-parse-ignore btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimikino.streamupbox.com%2Fsingle.php&amp;src=sdkpreparse"><i class="fa fa-facebook"></i> Share</a>
+								<!--<div><a>Share</a></div>-->
+							</li>
 							<li><a href="#" class="btn btn-twitter"><i class="fa fa-twitter"></i> Tweet</a></li>
 							<li><a href="#" class="btn btn-google"><i class="fa fa-google-plus-square"></i> Google+</a></li>
 							<li><a href="#" id="whatss" class="btn" style="background-color:green;color:white"><i class="fa fa-whatsapp"></i> WhatsApp</a></li>

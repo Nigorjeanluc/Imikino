@@ -5,7 +5,7 @@ include("../connect.php");
 		$username = htmlentities($_POST['name']);
         $password = htmlentities($_POST['password']);
 		$sql= "SELECT * FROM admin WHERE Username='$username' AND Password='$password'";
-		$res= mysqli_query($dbcon,$sql) or die ("Failed".mysqli_error());
+		$res= mysqli_query($dbcon,$sql);
 		$row= mysqli_fetch_array($res);
 		if(isset($row)){
 			$_SESSION['admin']=$row['Username'];
