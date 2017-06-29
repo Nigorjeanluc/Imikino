@@ -1,7 +1,7 @@
         <?php $name=$_SESSION['admin']; ?>
         <header class="main-header">
         <a href="index.php" class="logo"><b>Admin</b><span style="font-family:cursive;font-style:italic;text-shadow: 5px 4px 4px #0e540d;">
-					<span style="color:lightskyblue">Imi</span><span style="color:gold">kino</span><span style="color:seagreen">.com</span>
+					<span style="color:lightskyblue">Imi</span><span style="color:gold">kino</span><span style="color:seagreen">.net</span>
 				</span></a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -18,38 +18,80 @@
               <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-envelope-o"></i>
-                  <span class="label label-success">4</span>
+                  <span class="label label-success">
+                  <?php
+                    include("../connect.php");
+                    $sqli="SELECT SUM(counter) FROM messages";
+                    $result=mysqli_query($dbcon,$sqli);
+                    while ($row=mysqli_fetch_assoc($result)) {
+                      echo $row['SUM(counter)'];
+                    }
+                  ?>
+                  </span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li class="header">You have 4 messages</li>
+                  <li class="header"><?php
+                    include("../connect.php");
+                    $sqli="SELECT SUM(counter) FROM messages";
+                    $result=mysqli_query($dbcon,$sqli);
+                    while ($row=mysqli_fetch_assoc($result)) {
+                      echo "You have ".$row['SUM(counter)']." new messages";
+                    }
+                  ?>
+                  </li>
                   <li>
                     <!-- inner menu: contains the actual data -->
                     <ul class="menu">
+                    <?php
+                      include("../connect.php");
+                      $sqli="SELECT * FROM messages WHERE counter=1 ORDER BY Date DESC LIMIT 0,5 ";
+                      $result=mysqli_query($dbcon,$sqli);
+                      while ($row=mysqli_fetch_assoc($result)) {
+                        echo '
                       <li><!-- start message -->
-                        <a href="#">
-                          <div class="pull-left">
-                            <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                          <div style="padding: 5px 5px 5px 5px" class="pull-left">
+                            <!--<img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>-->
+                            <h4>
+                              '.$row['User'].'
+                              <small><i class="fa fa-clock-o"></i> '.$row['Date'].'</small>
+                            </h4>
+                            <p>'.substr($row['Content'],0,10).'...</p>
                           </div>
-                          <h4>
-                            Support Team
-                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                          </h4>
-                          <p>Why not buy a new awesome theme?</p>
-                        </a>
                       </li><!-- end message -->
+                        ';
+                      }
+                    ?>
                     </ul>
                   </li>
-                  <li class="footer"><a href="#">See All Messages</a></li>
+                  <li class="footer"><a href="messages.php">See All Messages</a></li>
                 </ul>
               </li>
               <!-- Notifications: style can be found in dropdown.less -->
               <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
-                  <span class="label label-warning">10</span>
+                  <span class="label label-warning">
+                  <?php
+                    include("../connect.php");
+                    $sqli="SELECT SUM(counter) FROM comments";
+                    $result=mysqli_query($dbcon,$sqli);
+                    while ($row=mysqli_fetch_assoc($result)) {
+                      echo $row['SUM(counter)'];
+                    }
+                  ?>
+                  </span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li class="header">You have 10 notifications</li>
+                  <li class="header">
+                  <?php
+                    include("../connect.php");
+                    $sqli="SELECT SUM(counter) FROM comments";
+                    $result=mysqli_query($dbcon,$sqli);
+                    while ($row=mysqli_fetch_assoc($result)) {
+                      echo "You have ".$row['SUM(counter)']." new comments";
+                    }
+                  ?>
+                  </li>
                   <li>
                     <!-- inner menu: contains the actual data -->
                     <ul class="menu">
@@ -60,7 +102,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="footer"><a href="#">View all</a></li>
+                  <li class="footer"><a href="comment.php">View all</a></li>
                 </ul>
               </li>
               

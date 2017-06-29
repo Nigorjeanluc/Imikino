@@ -152,7 +152,7 @@
 						}
 					}else{
 						echo '<h6 id="here" class="text-center">Ntakiravugwa kuri iyi nkuru</h6><h6 align="center">Ba uwambere mugutanga igikekerezo cyawe kuri <span style="font-family:cursive;font-size:25px;font-style:oblique;text-shadow: 3px 4px 4px black;" class="logo">
-					<span style="color:lightskyblue">IMI</span><span style="color:gold">KINO</span><span style="color:seagreen">.COM</span>
+					<span style="color:lightskyblue">IMI</span><span style="color:gold">KINO</span><span style="color:seagreen">.net</span>
 				</span></h6>';
 					}
                    

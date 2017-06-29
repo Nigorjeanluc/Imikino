@@ -25,8 +25,8 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>|<span style="font-family:cursive;font-size:40px;font-style:italic;text-shadow: 5px 4px 4px #0e540d;" class="logo">
-					<span style="color:lightskyblue">Imi</span><span style="color:gold">kino</span><span style="color:seagreen">.com</span>
+        <a href="../../index2.html"><b>Admin</b>|<span style="font-family:cursive;font-size:40px;font-style:italic;text-shadow: 3px 4px 4px black;" class="logo">
+					<span style="color:lightskyblue">Imi</span><span style="color:gold">kino</span><span style="color:seagreen">.net</span>
 				</span></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">

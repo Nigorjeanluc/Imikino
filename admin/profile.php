@@ -59,6 +59,49 @@
         <!-- Main content -->
         <section class="content">
           <div class="row">
+            <div class="box-body">
+              <div class="panel panel-info">
+                <div class="panel-body">
+                  <div class="row">
+                                <?php
+                                include('../connect.php');
+                                $admin="Kwizera";
+                                $sqli="SELECT * FROM admin WHERE Username='$admin' ORDER BY ID DESC";
+                                $result=mysqli_query($dbcon,$sqli);
+                                while ($row=mysqli_fetch_assoc($result)) {
+                                echo'
+                                    <form role="form" action="../opera/editadmin.php" method="post" enctype="multipart/form-data">
+                                    <div class="col-lg-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading text-center">
+                                                Name and Password
+                                            </div>
+                                            <div class="panel-body">
+                                                <h1>Lastly Updated on <small>'.$row['Date'].'</small></h1>
+                                                <div class="form-group">
+                                                    <label>Edit your name</label>
+                                                    <input class="form-control" name="admin" type="text" value="'.$row['Username'].'">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Change your password</label>
+                                                    <input class="form-control" name="password" type="text" value="'.$row['Password'].'">
+                                                </div>
+                                            </div>
+                                            <!-- /.panel-body -->
+                                        </div>
+                                        <!-- /.panel -->
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                            <div class="panel-footer text-center">
+                                <button type="submit" name="edit" class="btn btn-primary">Save</button>
+                            </div>
+                            </form>';
+                        }
+                        ?>
+              </div>
+            </div>
           </div>
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
