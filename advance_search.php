@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Igor Jean-Luc Ndiramiye">
 	
-    <title>Search | Imikino.com</title>
+    <title>Search | imikino.net</title>
 	
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">

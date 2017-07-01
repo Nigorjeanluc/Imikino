@@ -5,7 +5,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Admin | Imikino.com</title>
+    <title>Admin | imikino.net</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="editor.css" type="text/css" rel="stylesheet"/>
     <!-- Bootstrap 3.3.2 -->
