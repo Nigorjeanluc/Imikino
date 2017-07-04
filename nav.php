@@ -52,7 +52,7 @@
 				</li>
 			</ul>
 			<ul class="list-inline navbar-right top-social">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="https://www.facebook.com/yaminilivecom-331259140367167/?ref=aymt_homepage_panel"><i class="fa fa-facebook"></i></a></li>
 				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 				<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>

@@ -95,11 +95,20 @@
                   <li>
                     <!-- inner menu: contains the actual data -->
                     <ul class="menu">
+                    <?php
+                      include("../connect.php");
+                      $sqli="SELECT * FROM comments WHERE counter=1";
+                      $result=mysqli_query($dbcon,$sqli);
+                      while ($row=mysqli_fetch_assoc($result)) {
+                        echo '
                       <li>
                         <a href="#">
-                          <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                          <i class="fa fa-comment text-aqua"></i><sup><b>'.$row['User'].'</b></sup> '.substr($row['Content'],0,15).'...
                         </a>
                       </li>
+                        ';
+                      }
+                    ?>
                     </ul>
                   </li>
                   <li class="footer"><a href="comment.php">View all</a></li>
