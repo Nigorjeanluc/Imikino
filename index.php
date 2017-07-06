@@ -263,9 +263,7 @@
 							</div>
 						</div>
 					</div>
-									<img src="images/banner-2.jpg" class="img-responsive"/>
-									<img src="images/banner-2.jpg" class="img-responsive"/>
-									<img src="images/banner-2.jpg" class="img-responsive"/>
+									<meta name="propeller" content="b9e59973216ba17213937d0a9ffa9800" />
 					<!-- Start Widget -->
 					<!--<div class="widget wid-gallery">
 						<div class="heading"><h4>Gallery</h4></div>
@@ -416,11 +414,11 @@
 						</div>
 					</div>-->
 					<!-- Start Widget -->
-					<div class="widget wid-banner">
+					<!--<div class="widget wid-banner">
 						<div class="content">
 							<img src="images/banner-2.jpg" class="img-responsive"/>
 						</div>
-					</div>
+					</div>-->
 					<!---- Start Widget ---->
 					<!--<div class="widget wid-categoty">
 						<div class="heading"><h4>Category</h4></div>
@@ -444,8 +442,7 @@
 							</form></center>
 						</div>
 					</div>
-					<img src="images/banner-2.jpg" class="img-responsive"/>
-					<img src="images/banner-2.jpg" class="img-responsive"/>
+					<meta name="propeller" content="b9e59973216ba17213937d0a9ffa9800" />
 			</div>
 		</div>
 	</div>
