@@ -109,7 +109,7 @@
 				<div id="sidebar" class="col-md-4"><?php include('search.php');?>
 					<!---- Start Widget ---->
 					<div class="widget wid-follow">
-						<div class="heading"><h4>Follow Us</h4></div>
+						<div class="heading"><h4>Dukurikire</h4></div>
 						<div class="content">
 							<ul class="list-inline">
 								<li>

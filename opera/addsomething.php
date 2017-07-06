@@ -53,7 +53,6 @@ include("dataopera.php");
                                 Place,Views,counter,
                                 Date
                                 ";
-
         $sourceArray = stringCopact3($title,
                                         $piconein,
                                         $pic1txt).",".
