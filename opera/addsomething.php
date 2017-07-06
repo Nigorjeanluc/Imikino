@@ -7,7 +7,7 @@ include("dataopera.php");
 		$cat= htmlentities($_POST['sport']);
         $place = htmlentities($_POST['place']);
         $author=htmlentities($_POST['author']);
-        $content = $_POST['content'];
+        $content = htmlentities($_POST['content']);
         $pic1txt= htmlentities($_POST['piconetxt']);
         $pic2txt= htmlentities($_POST['pictwotxt']);
         $pic3txt= htmlentities($_POST['picthreetxt']);
