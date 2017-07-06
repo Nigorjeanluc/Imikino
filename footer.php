@@ -24,7 +24,7 @@
 							<a href="swimming.php">Swimming</a>
 							<a href="cricket.php">Cricket</a>
 							<a href="cycling.php">Cycling</a>
-							<a href="athletic.php">Athletic sports</a>
+							<a href="athletic.php">Athletism</a>
 						</div>
 					</div>
 					<div class="col-md-4 col-footer footer-3">
