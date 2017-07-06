@@ -134,10 +134,10 @@
                                 <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
                                     <label>More about pictures of your article ordered like this respectively...</label>
                                     <input name="piconetxt" class="form-control" placeholder="Picture One" type="text" required>
-                                    <input name="pictwotxt" class="form-control" placeholder="Picture Two" type="text">
-                                    <input name="picthreetxt" class="form-control" placeholder="Picture Three" type="text">
-                                    <input name="picfourtxt" class="form-control" placeholder="Picture Four" type="text">
-                                    <input name="picfivetxt" class="form-control" placeholder="Picture Five" type="text">
+                                    <input name="pictwotxt" class="form-control files" placeholder="Picture Two" type="text">
+                                    <input name="picthreetxt" class="form-control files" placeholder="Picture Three" type="text">
+                                    <input name="picfourtxt" class="form-control files" placeholder="Picture Four" type="text">
+                                    <input name="picfivetxt" class="form-control files" placeholder="Picture Five" type="text">
                                 </div>
                                 <div class="form-group col-lg-6 col-md-6 text-center">
                                     <label>Edit your post here</label>

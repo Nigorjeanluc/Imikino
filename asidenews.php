@@ -62,5 +62,4 @@
 						?>
 						</div>
 					</div>
-					<img src="images/banner-2.jpg" class="img-responsive"/>
-					<img src="images/banner-2.jpg" class="img-responsive"/>
+					<meta name="propeller" content="b9e59973216ba17213937d0a9ffa9800" />

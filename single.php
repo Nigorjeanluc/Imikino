@@ -146,7 +146,7 @@
 							echo'
 							<blockquote>
 								<p>'.ucfirst($row['User']).'</p>
-								<small style="color:black">'.ucfirst($row['Content']).'</small>
+								<small style="color:black">'.ucfirst(htmlspecialchars($row['Content'])).'</small>
 							</blockquote>
 							';
 						}

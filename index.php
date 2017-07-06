@@ -134,7 +134,7 @@
 					}
 				?>
 				</div>
-				<img src="images/banner.jpg" />
+				<!--<img src="images/banner.jpg" />-->
 			</div>
 		</div>
 	</div>
