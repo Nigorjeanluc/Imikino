@@ -2,6 +2,32 @@
 	session_start();
 	include('opera/database.php');
 ?>
+<?php
+                 	$sid=$_REQUEST['art'];
+					$pipsql = mysqli_query($dbcon,"SELECT * FROM news WHERE ID='$sid'");
+                    while($row=mysqli_fetch_array($pipsql)){
+                        $img= $row['picture1'];
+						$pic1txt= $row['pic1_txt'];
+						$img2= $row['picture2'];
+						$pic2txt= $row['pic2_txt'];
+						$img3= $row['picture3'];
+						$pic3txt= $row['pic3_txt'];
+						$img4= $row['picture4'];
+						$pic4txt= $row['pic4_txt'];
+						$img5= $row['picture5'];
+						$pic5txt= $row['pic5_txt'];
+						$title= $row['Title'];
+						$contents= $row['Content'];
+						$author = $row['Author'];
+						$cat = $row['Categorie'];
+						$place = $row['Place'];
+						$date= $row['Date'];
+						$views = $row['Views'];
+						$views++;
+						$_sql = "UPDATE news SET Views='$views' WHERE ID='$sid'";
+						mysqli_query( $dbcon,$_sql);
+                    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +35,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Igor Jean-Luc Ndiramiye">
+	<meta property="og:url" content="<?php echo $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?art='.$_REQUEST['art'];?>" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="<?php echo $title; ?>" />
+	<meta property="og:image" content="<?php echo $_SERVER['HTTP_HOST'].'/'.$img;?>" />
 	
     <title>Newspage | imikino.net</title>
 	
@@ -42,13 +72,24 @@
 
 <body>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=632303256956449";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '465177240507172',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();   
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
 <header>
 	<!--Top-->
@@ -65,32 +106,6 @@
 		<div class="row">
 			<div id="main-content" class="col-md-8">
 				<div class="box">
-				<?php
-                 	$sid=$_REQUEST['art'];
-					$pipsql = mysqli_query($dbcon,"SELECT * FROM news WHERE ID='$sid'");
-                    while($row=mysqli_fetch_array($pipsql)){
-                        $img= $row['picture1'];
-						$pic1txt= $row['pic1_txt'];
-						$img2= $row['picture2'];
-						$pic2txt= $row['pic2_txt'];
-						$img3= $row['picture3'];
-						$pic3txt= $row['pic3_txt'];
-						$img4= $row['picture4'];
-						$pic4txt= $row['pic4_txt'];
-						$img5= $row['picture5'];
-						$pic5txt= $row['pic5_txt'];
-						$title= $row['Title'];
-						$contents= $row['Content'];
-						$author = $row['Author'];
-						$cat = $row['Categorie'];
-						$place = $row['Place'];
-						$date= $row['Date'];
-						$views = $row['Views'];
-						$views++;
-						$_sql = "UPDATE news SET Views='$views' WHERE ID='$sid'";
-						mysqli_query( $dbcon,$_sql);
-                    }
-                ?>
 					<div class="wrap-vid">
 						<?php 
 							echo'<div align="center"><img style="position:relative;height:300px" src="'.$img.'" /></div>';
@@ -99,7 +114,7 @@
 					</div>
 					<div style="margin-top:5px" class="share">
 						<ul class="list-inline center">
-							<li class="fb-share-button" data-href="https://imikino.streamupbox.com/single.php" data-layout="button" data-size="small" data-mobile-iframe="true"><a  class="fb-xfbml-parse-ignore btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimikino.streamupbox.com%2Fsingle.php&amp;src=sdkpreparse"><i class="fa fa-facebook"></i> Share</a>
+							<li class="fb-share-button" data-href="https://imikino.net/single.php?art=<?php echo $_REQUEST['art']?>" data-layout="button" data-size="small" data-mobile-iframe="true"><a  class="fb-xfbml-parse-ignore btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimikino.net%2Fsingle.php?art=<?php echo $_REQUEST['art'];?>&amp;src=sdkpreparse"><i class="fa fa-facebook"></i> Share</a>
 								<!--<div><a>Share</a></div>-->
 							</li>
 							<li><a href="#" class="btn btn-twitter"><i class="fa fa-twitter"></i> Tweet</a></li>
@@ -114,6 +129,7 @@
 						<span><i class="fa fa-eye"></i><?php echo $views; ?> Views</span>
 					</div>
 					<h4 class="vid-name text-center"><?php echo ucfirst($title); ?></h4>
+					<h4 class="vid-name text-center"></h4>
 					<p style="margin-top: 20px">
 					<?php 
 						echo $contents;
