@@ -152,32 +152,32 @@
 							<div class="row">
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[5].'"><img style="position:relative;height:150px" src="'.$picture1[5].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[5].'">'.truncateee($title[5]).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[5].'">'.truncateee(ucfirst($title[5])).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[5],0,10) ?> / <i class="fa fa-comment-o"></i> 10 /  <i class="fa fa-eye"></i> <?php echo $views[5]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[6].'"><img style="position:relative;height:150px" src="'.$picture1[6].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[6].'">'.truncateee($title[6]).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[6].'">'.truncateee(ucfirst($title[6])).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[6],0,10) ?> / <i class="fa fa-comment-o"></i> 10 /  <i class="fa fa-eye"></i> <?php echo $views[6]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[7].'"><img style="position:relative;height:150px" src="'.$picture1[7].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[7].'">'.truncateee($title[7]).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[7].'">'.truncateee(ucfirst($title[7])).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[7],0,10) ?> / <i class="fa fa-comment-o"></i> 10 /  <i class="fa fa-eye"></i> <?php echo $views[7]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[8].'"><img style="position:relative;height:150px" src="'.$picture1[8].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[8].'">'.truncateee($title[8]).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[8].'">'.truncateee(ucfirst($title[8])).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[8],0,10) ?> / <i class="fa fa-comment-o"></i> 10 /  <i class="fa fa-eye"></i> <?php echo $views[8]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[9].'"><img style="position:relative;height:150px" src="'.$picture1[9].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[9].'">'.truncateee($title[9]).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[9].'">'.truncateee(ucfirst($title[9])).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[9],0,10) ?> / <i class="fa fa-comment-o"></i> 10 /  <i class="fa fa-eye"></i> <?php echo $views[9]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[10].'"><img style="position:relative;height:150px" src="'.$picture1[10].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[10].'">'.truncateee($title[10]).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[10].'">'.truncateee(ucfirst($title[10])).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"></i> 10 /  <i class="fa fa-eye"></i> 945</span></div>
 								</div>
 							</div>
