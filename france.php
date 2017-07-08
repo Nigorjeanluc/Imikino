@@ -83,7 +83,7 @@
 								</div>
 								<div align="center"><img style="position:relative;height:150px" src="'.$row['picture1'].'" /></div>
 							</div>
-							<p>'.truncate($row['Content']).' <a href="single.php?art='.$row['ID'].'">MORE...</a></p>
+							<p>'.truncate(htmlspecialchars_decode($row['Content'])).' <a href="single.php?art='.$row['ID'].'">MORE...</a></p>
 						</div>
 					</div>
 					<hr class="line">';

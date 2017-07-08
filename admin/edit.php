@@ -1,5 +1,10 @@
 <?php
     require('control.php');
+    if(isset($_REQUEST['id'])){
+        $sid = $_REQUEST['id'];
+    }else{
+        header('editdel.php');
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,12 +32,8 @@
     <link href="dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
     <script src="dashboard/vendor/jquery/jquery.min.js"></script>
 	<script src="dashboard/bootstrap/js/bootstrap.min.js"></script>
-	<script src="editor.js"></script>
-	<script>
-		$(document).ready(function() {
-			$("#txtEditor").Editor();
-		});
-	</script>
+    <script src="ckeditor/ckeditor.js"></script>
+	<!--<script src="ckeditor/adapters/jquery.js"></script>-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -85,9 +86,9 @@
                                     }
                         ?>
                         <?php
-                            $sid = $_REQUEST['id'];
                             $sql = mysqli_query($dbcon,"SELECT * FROM news WHERE ID='$sid'");
                             while($row = mysqli_fetch_array($sql)){
+                                $cont = $row['Content'];
                                 echo'
                         <form role="form" method="post" action="../opera/addsomething.php" enctype="multipart/form-data">
                             <div class="form-group text-center">
@@ -131,7 +132,7 @@
                             </div>
                             <div class="form-group text-center">
                                 <label>Author</label>
-                                <input class="form-control" type="text" name="author" value="'.$row['Author'].'" required>
+                                <input class="form-control" type="text" name="author" value="'.ucfirst($row['Author']).'" required>
                             </div>
                             <div class="row">
                                 <!--<div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
@@ -150,15 +151,13 @@
                                     <input name="picfourtxt" class="form-control" placeholder="Picture Four" type="text">
                                     <input name="picfivetxt" class="form-control" placeholder="Picture Five" type="text">
                                 </div>-->
-                                <div class="form-group col-lg-12 col-md-12 text-center">
-                                    <label>Re-Edit your post here</label>
-                                    <textarea class="form-control" id="txtEditor"></textarea>
-                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 text-center">
                                     <label>Enter edited post here <span style="color:red">*</span></label>
-                                    <textarea class="form-control" id="content" name="content" required></textarea> 
+                                    <textarea class="ckeditor" name="content" required>';
+                                    echo htmlspecialchars_decode($row['Content']);
+                                    echo'</textarea> 
                                 </div>
                             </div>
                         </div>

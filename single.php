@@ -132,7 +132,7 @@
 					<h4 class="vid-name text-center"></h4>
 					<p style="margin-top: 20px">
 					<?php 
-						echo $contents;
+						echo htmlspecialchars_decode($contents);
 						if($img2!=="images/news/"){
 							echo'<div align="center"><img style="position:relative;height:300px" src="'.$img2.'" /></div>';
 							echo'<p style="margin-top:5px" class="text-center"><b>'.ucfirst($pic2txt).'</b></p>';
