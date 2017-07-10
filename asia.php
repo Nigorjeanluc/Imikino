@@ -77,7 +77,7 @@
 								<div align="center"><img style="position:relative;height:150px" src="'.$row['picture1'].'" /></div>
 							</div>
 							<p>';
-							echo truncate(htmlspecialchars_decode($row['Content']));
+							echo truncate($row['Content']);
 							echo ' <a href="single.php?art='.$row['ID'].'">MORE...</a></p>
 						</div>
 					</div>
