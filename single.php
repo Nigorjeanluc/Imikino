@@ -273,7 +273,7 @@
 					<div class="box-content">
 						<div class="row">
 						<?php
-						$sql = mysqli_query($dbcon,"SELECT * FROM news WHERE Place = '$place' OR Categorie = '$cat' ORDER BY ID DESC LIMIT 0,2");
+						$sql = mysqli_query($dbcon,"SELECT * FROM news WHERE Place = '$place' OR Categorie = '$cat' ORDER BY ID DESC LIMIT 0,3");
 						while($row = mysqli_fetch_array($sql)){
 							echo'
 							<div class="col-md-4">

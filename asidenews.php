@@ -3,7 +3,7 @@
 						<div class="content">
 						<?php
 										include('opera/truncatee.php');
-										$sql = mysqli_query($dbcon,"SELECT * FROM news ORDER BY ID DESC LIMIT 0,3");
+										$sql = mysqli_query($dbcon,"SELECT * FROM news ORDER BY ID DESC LIMIT 0,5");
 										while($row = mysqli_fetch_array($sql)){
 											echo'
 							<div class="post wrap-vid">
@@ -35,7 +35,7 @@
 						<div class="heading"><h4>Izikuzwe cyane</h4></div>
 						<div class="content">
 						<?php
-										$sql = mysqli_query($dbcon,"SELECT * FROM news WHERE Views>=10 ORDER BY Views DESC LIMIT 0,3");
+										$sql = mysqli_query($dbcon,"SELECT * FROM news WHERE Views>=500 ORDER BY Views DESC LIMIT 0,5");
 										while($row = mysqli_fetch_array($sql)){
 											echo'
 							<div class="post wrap-vid">
