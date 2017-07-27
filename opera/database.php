@@ -27,7 +27,6 @@
             $picture5[$i]= $myrow['picture5'];
             $i++;
     }
-    <?php
 
 /**
  * AntiAdBlock custom library for API, with some caching.
