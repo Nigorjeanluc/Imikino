@@ -32,7 +32,7 @@
 					</div>
 					<!---- Start Widget ---->
 					<div class="widget ">
-						<div class="heading"><h4>Izikuzwe cyane</h4></div>
+						<div class="heading"><h4>Izikunzwe cyane</h4></div>
 						<div class="content">
 						<?php
 										$sql = mysqli_query($dbcon,"SELECT * FROM news WHERE Views>=500 ORDER BY Views DESC LIMIT 0,5");
