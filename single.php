@@ -61,7 +61,13 @@
 	
 	<!-- Core JavaScript Files -->  	 
     <script src="js/bootstrap.min.js"></script>
-	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-1410948886873143",
+		enable_page_level_ads: true
+	});
+	</script>
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
