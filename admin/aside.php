@@ -42,6 +42,12 @@
               </a>
             </li>
             <li>
+              <a href="jour.php">
+                <i class="fa fa-users"></i>
+                <span>Journalists</span>
+              </a>
+            </li>
+            <li>
               <a href="comment.php">
                 <i class="fa fa-files-o"></i>
                 <span>Comments</span>

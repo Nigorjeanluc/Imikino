@@ -75,6 +75,79 @@ include("dataopera.php");
 			echo "<meta http-equiv='refresh' content='0;url=../admin/post.php?no=0'>";
 		}
 	}
+	if(isset($_POST['poo0'])){
+        $title = htmlentities($_POST['title']);
+		$cat= htmlentities($_POST['sport']);
+        $place = htmlentities($_POST['place']);
+        $author=htmlentities($_POST['author']);
+        $content = mysqli_real_escape_string($dbcon,htmlentities($_POST['content']));
+        $pic1txt= htmlentities($_POST['piconetxt']);
+        $pic2txt= htmlentities($_POST['pictwotxt']);
+        $pic3txt= htmlentities($_POST['picthreetxt']);
+        $pic4txt= htmlentities($_POST['picfourtxt']);
+        $pic5txt= htmlentities($_POST['picfivetxt']);
+		$targetFolder = "../images/news/";
+		$targetFolders = "images/news/";
+        $picone= $targetFolder.basename($_FILES['picone']['name']);
+        $pictwo= $targetFolder.basename($_FILES['pictwo']['name']);
+        $picthree= $targetFolder.basename($_FILES['picthree']['name']);
+        $picfour= $targetFolder.basename($_FILES['picfour']['name']);
+        $picfive= $targetFolder.basename($_FILES['picfive']['name']);
+        $file_tmp1=$_FILES['picone']['tmp_name'];
+        $file_tmp2=$_FILES['pictwo']['tmp_name'];
+        $file_tmp3=$_FILES['picthree']['tmp_name'];
+        $file_tmp4=$_FILES['picfour']['tmp_name'];
+        $file_tmp5=$_FILES['picfive']['tmp_name'];
+		move_uploaded_file($file_tmp1,$picone);
+        move_uploaded_file($file_tmp2,$pictwo);
+		move_uploaded_file($file_tmp3,$picthree);
+		move_uploaded_file($file_tmp4,$picfour);
+		move_uploaded_file($file_tmp5,$picfive);
+        $piconein= $targetFolders.basename($_FILES['picone']['name']);
+        $pictwoin= $targetFolders.basename($_FILES['pictwo']['name']);
+        $picthreein= $targetFolders.basename($_FILES['picthree']['name']);
+        $picfourin= $targetFolders.basename($_FILES['picfour']['name']);
+        $picfivein= $targetFolders.basename($_FILES['picfive']['name']);
+		$table = "news";
+        $destinationArray = "Title,
+                                picture1,
+                                pic1_txt,
+                                picture2,
+                                pic2_txt,
+                                picture3,
+                                pic3_txt,
+                                picture4,
+                                pic4_txt,
+                                picture5,
+                                pic5_txt,
+                                Author,
+                                Content,
+                                Categorie,
+                                Place,Views,counter,
+                                Date
+                                ";
+        $sourceArray = stringCopact3($title,
+                                        $piconein,
+                                        $pic1txt).",".
+                        stringCopact3($pictwoin,
+                                        $pic2txt,
+                                        $picthreein).",".
+                        stringCopact3($pic3txt,
+                                        $picfourin,
+                                        $pic4txt).",".
+                        stringCopact2($picfivein,$pic5txt).",".
+                        stringCopact3($author,
+                                        $content,
+                                        $cat).",".
+                       stringCopact3($place,0,1);
+            $query = insertDatas($table,$destinationArray,$sourceArray);
+        $res = mysqli_query($dbcon,$query);
+		if($res){
+			echo "<meta http-equiv='refresh' content='0;url=../admin/post1.php?yes=0#here'>";
+		}else{
+			echo "<meta http-equiv='refresh' content='0;url=../admin/post1.php?no=0'>";
+		}
+	}
     //Pub
     if(isset($_POST['po'])){
         $name = htmlentities($_POST['name']);

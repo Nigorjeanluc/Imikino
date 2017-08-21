@@ -1,5 +1,5 @@
 <?php
-    require('control.php');
+    require('control1.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,11 +46,11 @@
   </head>
   <body class="skin-blue">
     <div class="wrapper">
-      <?php include('../opera/databaseadmin.php'); ?>
+      <?php include('../opera/databasejour.php'); ?>
       
-      <?php include('nav.php'); ?>
+      <?php include('nav1.php'); ?>
 
-      <?php include('aside.php'); ?>
+      <?php include('aside1.php'); ?>
       <!-- =============================================== -->
 
       <!-- Right side column. Contains the navbar and content of the page -->
@@ -118,9 +118,9 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group text-center">
+                            <div style="display:none;" class="form-group text-center">
                                 <label>Author</label>
-                                <input class="form-control" type="text" name="author" placeholder="Author" required>
+                                <input class="form-control" type="text" name="author" value="<?php echo $name; ?>" required>
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
@@ -134,10 +134,10 @@
                                 <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
                                     <label>More about pictures of your article ordered like this respectively...</label>
                                     <input name="piconetxt" class="form-control" placeholder="Picture One" type="text" required>
-                                    <input name="pictwotxt" class="form-control" placeholder="Picture Two" type="text">
-                                    <input name="picthreetxt" class="form-control" placeholder="Picture Three" type="text">
-                                    <input name="picfourtxt" class="form-control" placeholder="Picture Four" type="text">
-                                    <input name="picfivetxt" class="form-control" placeholder="Picture Five" type="text">
+                                    <input style="margin-top:10px" name="pictwotxt" class="form-control" placeholder="Picture Two" type="text">
+                                    <input style="margin-top:10px" name="picthreetxt" class="form-control" placeholder="Picture Three" type="text">
+                                    <input style="margin-top:10px" name="picfourtxt" class="form-control" placeholder="Picture Four" type="text">
+                                    <input style="margin-top:10px" name="picfivetxt" class="form-control" placeholder="Picture Five" type="text">
                                 </div>
                                 <div class="form-group col-lg-6 col-md-6 text-center">
                                     <label>Edit your post here</label>
@@ -145,7 +145,7 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="box-footer text-center"><p><input type="submit" name="poo" class="btn btn-success" value="Post the article"> | <input class="btn btn-default" type="reset" value="Reset"></p></div>
+                    <div class="box-footer text-center"><p><input type="submit" name="poo0" class="btn btn-success" value="Post the article"> | <input class="btn btn-default" type="reset" value="Reset"></p></div>
                         </form>
                 </div>
             </div>

@@ -28,4 +28,17 @@
             echo "<meta http-equiv='refresh' content='0;url=../admin/messages.php?noo=1&&#here'>";
         }
 	}
+    if(isset($_REQUEST['delll'])){
+		$ID = $_REQUEST['delll'];
+        $table = "news";
+        $table_col= "ID";
+        $target = $ID;
+		$query = deleteDatas($table,$table_col,$target);
+		$res= mysqli_query($dbcon,$query);
+        if($res){
+		    echo "<meta http-equiv='refresh' content='0;url=../admin/editdel1.php?yess=1&&#here'>";
+        }else{
+            echo "<meta http-equiv='refresh' content='0;url=../admin/editdel1.php?noo=1&&#here'>";
+        }
+	}
 ?>

@@ -25,6 +25,7 @@
 							<a href="cricket.php">Cricket</a>
 							<a href="cycling.php">Cycling</a>
 							<a href="athletic.php">Athletism</a>
+							<a href="admin/login1.php" target="_blank">Journalist</a>
 						</div>
 					</div>
 					<div class="col-md-4 col-footer footer-3">
