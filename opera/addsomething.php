@@ -159,13 +159,34 @@ include("dataopera.php");
         $piconein= $targetFolders.basename($_FILES['picone']['name']);
 		$table = "adverts";
         $destinationArray = "Company,picture1,Date";
-        $sourceArray = stringCopact2($name,$piconein);
+        $sourceArray = stringCopact3($name,$piconein);
         $query = insertDatas($table,$destinationArray,$sourceArray);
         $res = mysqli_query($dbcon,$query);
 		if($res){
 			echo "<meta http-equiv='refresh' content='0;url=../admin/pub.php?yes=0#here'>";
 		}else{
 			echo "<meta http-equiv='refresh' content='0;url=../admin/pub.php?no=0'>";
+		}
+	}
+    //Journalist
+    if(isset($_POST['jour'])){
+        $name = htmlentities($_POST['name']);
+        $pass = htmlentities($_POST['pass']);
+		$targetFolder = "../images/";
+		$targetFolders = "images/";
+        $picone= $targetFolder.basename($_FILES['picone']['name']);
+        $file_tmp1=$_FILES['picone']['tmp_name'];
+		move_uploaded_file($file_tmp1,$picone);
+        $piconein= $targetFolders.basename($_FILES['picone']['name']);
+		$table = "journalist";
+        $destinationArray = "Picture,Username,Password,Date";
+        $sourceArray = stringCopact3($piconein,$name,$pass);
+        $query = insertDatas($table,$destinationArray,$sourceArray);
+        $res = mysqli_query($dbcon,$query);
+		if($res){
+			echo "<meta http-equiv='refresh' content='0;url=../admin/jour.php?yes=0#here'>";
+		}else{
+			echo "<meta http-equiv='refresh' content='0;url=../admin/jour.php?no=0'>";
 		}
 	}
     //Edit
