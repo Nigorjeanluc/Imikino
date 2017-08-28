@@ -77,6 +77,7 @@
 </head>
 
 <body>
+<script type="text/javascript" src="//go.pub2srv.com/apu.php?zoneid=1378796"></script>
 <div id="fb-root"></div>
 <script>
   window.fbAsyncInit = function() {

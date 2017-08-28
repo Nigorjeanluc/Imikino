@@ -47,6 +47,7 @@
 </head>
 
 <body>
+<script type="text/javascript" src="//go.pub2srv.com/apu.php?zoneid=1378796"></script>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
