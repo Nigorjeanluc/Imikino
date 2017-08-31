@@ -230,77 +230,77 @@
 							<div class="row hidden-md hidden-lg">
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[0].'"><img style="position:relative;height:150px" src="'.$picture1[0].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[0].'">'.truncateee(ucfirst($title[0])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[0].'">'.ucfirst($title[0]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[0],0,10) ?> /  <i class="fa fa-eye"></i> <?php echo $views[0]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[1].'"><img style="position:relative;height:150px" src="'.$picture1[1].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[1].'">'.truncateee(ucfirst($title[1])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[1].'">'.ucfirst($title[1]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[1],0,10) ?> /  <i class="fa fa-eye"></i> <?php echo $views[1]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[2].'"><img style="position:relative;height:150px" src="'.$picture1[2].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[2].'">'.truncateee(ucfirst($title[2])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[2].'">'.ucfirst($title[2]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[2],0,10) ?> /  <i class="fa fa-eye"></i> <?php echo $views[2]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[3].'"><img style="position:relative;height:150px" src="'.$picture1[3].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[3].'">'.truncateee(ucfirst($title[3])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[3].'">'.ucfirst($title[3]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[3],0,10) ?> /  <i class="fa fa-eye"></i> <?php echo $views[3]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[4].'"><img style="position:relative;height:150px" src="'.$picture1[4].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[4].'">'.truncateee(ucfirst($title[4])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[4].'">'.ucfirst($title[4]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[4],0,10) ?> /  <i class="fa fa-eye"></i> <?php echo $views[4]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[5].'"><img style="position:relative;height:150px" src="'.$picture1[5].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[5].'">'.truncateee(ucfirst($title[5])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[5].'">'.ucfirst($title[5]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[5],0,10) ?> /   <i class="fa fa-eye"></i><?php echo $views[5]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[6].'"><img style="position:relative;height:150px" src="'.$picture1[6].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[6].'">'.truncateee(ucfirst($title[6])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[6].'">'.ucfirst($title[6]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[6],0,10) ?> /   <i class="fa fa-eye"></i><?php echo $views[6]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[7].'"><img style="position:relative;height:150px" src="'.$picture1[7].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[7].'">'.truncateee(ucfirst($title[7])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[7].'">'.ucfirst($title[7]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[7],0,10) ?> /   <i class="fa fa-eye"></i><?php echo $views[7]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[8].'"><img style="position:relative;height:150px" src="'.$picture1[8].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[8].'">'.truncateee(ucfirst($title[8])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[8].'">'.ucfirst($title[8]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[8],0,10) ?> /   <i class="fa fa-eye"></i><?php echo $views[8]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[9].'"><img style="position:relative;height:150px" src="'.$picture1[9].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[9].'">'.truncateee(ucfirst($title[9])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[9].'">'.ucfirst($title[9]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[9],0,10) ?> /   <i class="fa fa-eye"></i><?php echo $views[9]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[10].'"><img style="position:relative;height:150px" src="'.$picture1[10].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[10].'">'.truncateee(ucfirst($title[10])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[10].'">'.ucfirst($title[10]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[10],0,10) ?> /   <i class="fa fa-eye"></i><?php echo $views[10]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[11].'"><img style="position:relative;height:150px" src="'.$picture1[11].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[11].'">'.truncateee(ucfirst($title[11])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[11].'">'.ucfirst($title[11]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[11],0,10) ?> /   <i class="fa fa-eye"></i><?php echo $views[11]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[12].'"><img style="position:relative;height:150px" src="'.$picture1[12].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[12].'">'.truncateee(ucfirst($title[12])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[12].'">'.ucfirst($title[12]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[12],0,10) ?> /   <i class="fa fa-eye"></i><?php echo $views[12]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[13].'"><img style="position:relative;height:150px" src="'.$picture1[13].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[13].'">'.truncateee(ucfirst($title[13])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[13].'">'.ucfirst($title[13]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[13],0,10) ?> /   <i class="fa fa-eye"></i><?php echo $views[13]; ?> Views</span></div>
 								</div>
 								<div style="padding:5px" class="col-md-6">
 									<?php echo'<div align="center"><a href="single.php?art='.$ids[14].'"><img style="position:relative;height:150px" src="'.$picture1[14].'" /></a></div>';?>
-									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[14].'">'.truncateee(ucfirst($title[14])).'</a></h3>';?>
+									<?php echo'<h3 class="text-center"><a href="single.php?art='.$ids[14].'">'.ucfirst($title[14]).'</a></h3>';?>
 									<div align="center"><span><i class="fa fa-calendar"></i> <?php echo substr($Date[14],0,10) ?> /   <i class="fa fa-eye"></i><?php echo $views[14]; ?> Views</span></div>
 								</div>
 							</div>
