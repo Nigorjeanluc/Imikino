@@ -25,7 +25,15 @@
 	
 	<!-- Custom Fonts -->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"  type="text/css">
-	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105882306-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments)};
+	gtag('js', new Date());
+
+	gtag('config', 'UA-105882306-1');
+	</script>
 	<!-- jQuery and Modernizr-->
 	<script src="js/jquery-2.1.1.js"></script>
 	
